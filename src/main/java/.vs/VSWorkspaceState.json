@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\com",
+    "\\com\\mycompany",
+    "\\com\\mycompany\\nubulamusicwebaplication",
+    "\\com\\mycompany\\nubulamusicwebaplication\\resources",
+    "\\models",
+    "\\repositories",
+    "\\service",
+    "\\servlets"
+  ],
+  "SelectedNode": "\\service",
+  "PreviewInSolutionExplorer": false
+}

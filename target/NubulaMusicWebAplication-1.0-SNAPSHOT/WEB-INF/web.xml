@@ -9,6 +9,9 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>iniciar-sesion.html</welcome-file>
+        <welcome-file>iniciar-sesion.jsp</welcome-file>
     </welcome-file-list>
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
 </web-app>
