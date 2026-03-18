@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import MODEL.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -30,16 +31,19 @@ public class AutenticacionServlet extends HttpServlet {
         String correo = request.getParameter("correo");
         String contrasenia = request.getParameter("contrasenia");
         
-        boolean valido = usuarioService.autenticar(correo, contrasenia);
+        Usuario usuario = usuarioService.autenticar(correo, contrasenia);
         
-        if(valido){
+        try{
             
             HttpSession sesion = request.getSession(true);
-            
-            sesion.setAttribute("usuario",correo);
+            sesion.setAttribute("usuario",usuario);
+            sesion.setAttribute("correo", correo);
             response.sendRedirect("index.html");
-        }else{
-            response.sendRedirect("error.html");
+        }catch(IllegalArgumentException e){
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/views/auth/iniciar-sesion.html").forward(request, response);
+        }catch(Exception e){
+            throw new ServletException("Error al autenticar usuario");
         }
     }
 

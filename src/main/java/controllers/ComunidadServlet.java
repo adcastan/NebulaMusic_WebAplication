@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import MODEL.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -11,7 +12,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 import service.IUsuarioService;
+import service.UsuarioService;
 
 /**
  *
@@ -56,14 +59,36 @@ public class ComunidadServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private final IUsuarioService usuarioservice;
+    private final IUsuarioService usuarioservice = new UsuarioService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int pagina=1;
         int tamanioPagina=0;
         
-        String paginaParam;
+        String paginaParam = request.getParameter("pagina");
+        
+        if(paginaParam!=null && !paginaParam.isBlank()){
+            try{
+                pagina = Integer.parseInt(paginaParam);
+            }catch(NumberFormatException ex){
+                pagina=1;
+            }
+        }
+        List<Usuario> usuarios = usuarioservice.listarPaginado(pagina,tamanioPagina);
+        long TotalUsuarios = usuarioservice.contarUsuarios();
+        
+        long totalPaginas = (long) Math.cell((double)totalUsuarios/tamanioPagina);
+        
+        request.setAttribute("usuarios", usuarios);
+        request.setAttribute("paginaActual",pagina);
+        request.setAttribute("totalPaginas", totalPaginas);
+        request.setAttribute("totalUsuarios", TotalUsuarios);
+        
+        request.getRequestDispatcher("/views/aplication/comunidad.jsp").forward(request, response);
+        
+                
+        
     }
 
     /**
