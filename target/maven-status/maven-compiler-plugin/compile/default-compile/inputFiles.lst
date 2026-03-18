@@ -1,6 +1,12 @@
-C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\servlets\AutenticacionServlet.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\controllers\AutenticacionServlet.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\controllers\RegistroServlet.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\service\UsuarioService.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\UTIL\JPAUtil.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\DAO\IUsuarioDAO.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\DAO\UsuarioDAO.java
 C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\com\mycompany\nubulamusicwebaplication\resources\JakartaEE10Resource.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\MODEL\Usuario.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\service\IUsuarioService.java
 C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\com\mycompany\nubulamusicwebaplication\JakartaRestConfiguration.java
-C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\models\Usuario.java
-C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\repositories\UsuarioDB.java
-C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\servlets\RegistroServlet.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\controllers\AppListener.java
+C:\Users\Adrián\Documentos\Github\NebulaMusic_WebAplication\src\main\java\controllers\ComunidadServlet.java

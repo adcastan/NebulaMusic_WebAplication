@@ -22,7 +22,7 @@ public interface IUsuarioDAO {
 
     void eliminar(Long id);
 
-    List<Usuario> listaTop(int limite);
+    List<Usuario> listarTop(int limite);
 
     List<Usuario> listarPaginado(int pagina, int tamanioPagina);
 

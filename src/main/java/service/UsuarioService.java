@@ -6,19 +6,19 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-public class UsuarioService implements IUsuarioService{
+public class UsuarioService implements IUsuarioService {
 
     private final IUsuarioDAO usuarioDAO = new UsuarioDAO();
 
     @Override
     public void registrar(String nombre,
-                          String correo,
-                          String contrasenia,
-                          String pseudonimo,
-                          String estado,
-                          String cuenta,
-                          LocalDate fechaNacimiento,
-                          boolean terminosAceptados) {
+            String correo,
+            String contrasenia,
+            String pseudonimo,
+            String estado,
+            String cuenta,
+            LocalDate fechaNacimiento,
+            boolean terminosAceptados) {
 
         validarNombre(nombre);
         validarCorreo(correo);
@@ -228,5 +228,29 @@ public class UsuarioService implements IUsuarioService{
             throw new IllegalArgumentException("Debes aceptar los términos y condiciones.");
         }
     }
-} 
+
+    @Override
+    public List<Usuario> listarTop(int limite) {
+        if (limite <= 0) {
+            throw new IllegalArgumentException("El límite debe ser mayor a cero.");
+        }
+        return usuarioDAO.listarTop(limite);
+    }
+
+    @Override
+    public List<Usuario> listarPaginado(int pagina, int tamanioPagina) {
+        if (pagina <= 0) {
+            throw new IllegalArgumentException("La página debe ser mayor a cero.");
+        }
+        if (tamanioPagina <= 0) {
+            throw new IllegalArgumentException("El tamaño de página debe ser mayor a cero.");
+        }
+        return usuarioDAO.listarPaginado(pagina, tamanioPagina);
+    }
+
+    @Override
+    public long contarUsuarios() {
+        return usuarioDAO.contarUsuarios();
+    }
+}
 

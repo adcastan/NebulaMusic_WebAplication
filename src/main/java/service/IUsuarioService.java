@@ -26,4 +26,10 @@ public interface IUsuarioService {
     void actualizarUsuario(Usuario usuario);
 
     void eliminarUsuario(Long id);
+    
+    List<Usuario> listarTop(int limite);
+
+    List<Usuario> listarPaginado(int pagina, int tamanioPagina);
+
+    long contarUsuarios();
 }

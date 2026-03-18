@@ -1,0 +1,8 @@
+MODEL\Usuario.class
+DAO\IUsuarioDAO.class
+DAO\UsuarioDAO.class
+service\IUsuarioService.class
+com\mycompany\nubulamusicwebaplication\JakartaRestConfiguration.class
+com\mycompany\nubulamusicwebaplication\resources\JakartaEE10Resource.class
+servlets\RegistroServlet.class
+UTIL\JPAUtil.class

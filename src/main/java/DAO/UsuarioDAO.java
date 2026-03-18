@@ -194,57 +194,64 @@ public class UsuarioDAO implements IUsuarioDAO {
         }
     }
 
-    @Override
-    public List<Usuario> listaTop(int limite) {
-        EntityManager em = JPAUtil.getInstance().getEntityManager();
-
-        try {
-            TypedQuery<Usuario> query = em.createQuery("SELECT U FROM Usuario ORDER BY u.id DESC", Usuario.class);
-
-            query.setMaxResults(limite);
-
-            return query.getResultList();
-
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            em.close();
-        }
-
-    }
-
-    @Override
     public List<Usuario> listarPaginado(int pagina, int tamanioPagina) {
+
         EntityManager em = JPAUtil.getInstance().getEntityManager();
 
         try {
-            int inicio =(pagina -1 *tamanioPagina);
-            TypedQuery<Usuario> query = em.createQuery("SELECT U FROM Usuario ORDER BY u.id DESC", Usuario.class);
+
+            int inicio = (pagina - 1) * tamanioPagina;
+
+            TypedQuery<Usuario> query = em.createQuery(
+                    "SELECT u FROM Usuario u ORDER BY u.id DESC",
+                    Usuario.class
+            );
 
             query.setFirstResult(inicio);
             query.setMaxResults(tamanioPagina);
 
             return query.getResultList();
 
-        } catch (Exception e) {
-            throw e;
         } finally {
             em.close();
         }
+    }
 
+    @Override
+    public List<Usuario> listarTop(int limite) {
+
+        EntityManager em = JPAUtil.getInstance().getEntityManager();
+
+        try {
+
+            TypedQuery<Usuario> query = em.createQuery(
+                    "SELECT u FROM Usuario u ORDER BY u.id DESC",
+                    Usuario.class
+            );
+
+            query.setMaxResults(limite);
+
+            return query.getResultList();
+
+        } finally {
+            em.close();
+        }
     }
 
     @Override
     public long contarUsuarios() {
+
         EntityManager em = JPAUtil.getInstance().getEntityManager();
 
         try {
-            TypedQuery<Long> query = em.createQuery("SELECT COUNT(u) FROM Usuario", Long.class);
+
+            TypedQuery<Long> query = em.createQuery(
+                    "SELECT COUNT(u) FROM Usuario u",
+                    Long.class
+            );
 
             return query.getSingleResult();
 
-        } catch (Exception e) {
-            throw e;
         } finally {
             em.close();
         }
