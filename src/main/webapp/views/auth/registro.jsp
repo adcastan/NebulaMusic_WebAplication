@@ -24,11 +24,11 @@
             <form class="auth-card"
                 name="form_nuevo_usuario"
                 method="post"
-                action="/NubulaMusicWebAplication/registro"
+                action="${pageContext.request.contextPath}/registro"
                 enctype="application/x-www-form-urlencoded">
 
                   <div class="form-logo">
-                    <img src="./imgs/nebula-03.svg" alt="Logo Nébula">
+                    <img src="${pageContext.request.contextPath}/assets/imgs/nebula-03.svg" alt="Logo Nébula">
                 </div>
 
                 <div class="form-header"> 
@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <p style="text-align:center; font-size:0.85rem;">
                         ¿Ya tienes una cuenta?
-                        <a href="./iniciar-sesion.html">Inicia sesión</a>
+                        <a href="${pageContext.request.contextPath}/views/auth/iniciar-sesion.asp">Inicia sesión</a>
                     </p>
 
                     <button type="submit" class="btn-primary">

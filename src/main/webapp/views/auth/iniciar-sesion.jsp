@@ -20,11 +20,11 @@
                 <form class="auth-form"
                       name="form_iniciar_sesion" 
                       method="post" 
-                      action="/NubulaMusicWebAplication/autenticacion"
+                      action="/${pageContext.request.contextPath}/autenticacion"
                       enctype="application/x-www-form-urlencoded">
 
                     <div name="logo_usuario" class="form-logo">
-                        <img src="./imgs/nebula-03.svg" alt="Logo de nebula music">
+                        <img src="${pageContext.request.contextPath}/assets/imgs/nebula-03.svg" alt="Logo de nebula music">
                     </div>
 
                     <div name="titulo" class="form-header">
@@ -42,7 +42,7 @@
                         <input id="contrasenia" name="contrasenia" type="password" required>
                     </div>                    
                     <div name="options">
-                        <p>¿Aún no tienes una cuenta? <a href="./registro.html">Regístrate</a></p>
+                        <p>¿Aún no tienes una cuenta? <a href="${pageContext.request.contextPath}/views/auth/registro.html">Regístrate</a></p>
                         <button type="submit" class="btn-primary">Iniciar</button>
                         <button type="reset" class="btn-secondary">Cancelar</button>
                     </div>

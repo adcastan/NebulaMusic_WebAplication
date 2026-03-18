@@ -12,35 +12,11 @@
     <title>Nébula music</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/styles.css">
 </head>
 
 <body>
-    <nav class="main-nav">
-
-        <a class="logo" href="./index.jsp">
-            <img src="./imgs/nebula-03.svg" alt="Nebula Music">
-        </a>
-
-        <!-- Checkbox oculto -->
-        <input type="checkbox" id="menu-toggle">
-
-        <!-- Botón hamburguesa -->
-        <label for="menu-toggle" class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <!-- Menú -->
-        <ul class="nav-links">
-            <li><a href="./about.jsp">Nosotros</a></li>
-            <li><a href="./comunidad.jsp">Comunidad</a></li>
-            <li><a href="./iniciar-sesion.jsp">Iniciar Sesión</a></li>
-        </ul>
-
-    </nav>
-    <main>
+    <%@include file="WEB-INF/jsp/fragments/header.jspf" %> 
         <section>
             <h3 style="margin: 10px; margin: 0 auto; text-align: center; display: block; font-size: 3rem;">Bienvenidos los nuevos usuarios</h3>
 
@@ -99,8 +75,6 @@
 
             </div>
         </section>
-    </main>
-
     <footer>
         <div>
             Síguenos en nuestras redes.
